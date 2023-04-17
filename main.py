@@ -35,7 +35,7 @@ async def on_message(message):
             return
     
     #response to all channels    
-    if user_message.lower() == '!here'
+    if user_message.lower() == '!here':
         await message.channel.send('Yes I am everywhere')
 
 
