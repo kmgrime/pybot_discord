@@ -13,6 +13,7 @@ async def send_message(message, user_message, is_private):
         print(e)
 
 # bot
+# remember to change token before pushing code to repo
 def run_discord_bot():
     TOKEN = 'YOURETOKENHERE'
     intents = discord.Intents.default()
