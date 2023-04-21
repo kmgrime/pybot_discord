@@ -1,6 +1,27 @@
 # imports
 import discord
-import responses
+import logging
+from modules import responses
+
+# logging
+print('Starting log service...')
+
+# Logging attributes: https://docs.python.org/3/library/logging.html#logrecord-attributes
+
+logging.basicConfig(filename='logs.log',
+                    encoding='utf-8',
+                    filemode='w',
+                    level=logging.DEBUG,
+                    format='%(levelname)s (%(asctime)s): %(message)s (Line: %(lineno)d [%(filename)s])',
+                    datefmt='%d/%m/%Y %I:%M:%S %p')
+
+logging.debug('debug')
+logging.info('info')
+logging.warning('Warning')
+logging.error('Error')
+logging.critical('Critical')
+
+print('Logging started')
 
 # response
 
@@ -17,7 +38,7 @@ async def send_message(message, user_message):
 
 # remember to change token before pushing code to repo
 def run_discord_bot():
-    TOKEN = 'YOUR_TOKEN_HERE'
+    TOKEN = 'YOURE_TOKEN_HERE'
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
@@ -44,6 +65,6 @@ def run_discord_bot():
         elif user_message.lower() == 'hello':
             await send_message(message, user_message)
         else:
-            print('nothing done')
+            print('No output response')
 
     client.run(TOKEN)
