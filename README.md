@@ -1,5 +1,9 @@
 # Discord Bot with Responses
 
+[![Size](https://img.shields.io/github/languages/code-size/kmgrime/pybot_discord)](https://github.com/kmgrime/pybot_discord)
+[![Downloads](https://img.shields.io/github/downloads/kmgrime/pybot_discord/total)](https://github.com/kmgrime/pybot_discord)
+[![License](https://img.shields.io/github/license/kmgrime/pybot_discord)](https://github.com/kmgrime/pybot_discord/blob/main/LICENSE)
+
 This is a Python script for a basic Discord bot that responds to specific commands or messages. The bot will respond to messages with certain keywords or commands, such as "hello" or "!roll". It also includes PyJokes package to add some humor to its responses.
 
 ## Installation
@@ -43,3 +47,7 @@ This bot uses the following Python packages:
 
 - `discord`: For creating the bot and interacting with the Discord API.
 - `pyjokes`: For generating random jokes to include in the bot's responses.
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/kmgrime/pybot_discord/blob/main/LICENSE).
