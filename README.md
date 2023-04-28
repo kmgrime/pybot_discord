@@ -45,7 +45,7 @@ If you have any suggestions for improvements or new features to add to the bot, 
 
 This bot uses the following Python packages:
 
-- `discord`: For creating the bot and interacting with the Discord API.
+- `discord.py`: For creating the bot and interacting with the Discord API.
 - `pyjokes`: For generating random jokes to include in the bot's responses.
 
 ## License
