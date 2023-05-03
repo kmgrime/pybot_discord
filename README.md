@@ -43,10 +43,15 @@ The bot also logs messages it receives, printing the author's username, message 
 
 To run the bot in a container you simply clone the repository and build the image with the following commands
 
+Build the image
 ```
 docker build -t discordpybot:0.0.1 .
 ```
-
+List the images to fetch image ID
+```
+docker image list
+```
+Build and run the image in a container
 ```
 docker run 'imageID'
 ```
