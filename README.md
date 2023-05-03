@@ -12,7 +12,6 @@ This is a Python script for a basic Discord bot that responds to specific comman
 2. Install the necessary Python packages by running the following command:
 
 ```sh
-
 pip install -r requirements.txt
 ```
 
@@ -24,7 +23,6 @@ pip install -r requirements.txt
 To start the bot, run the following command in your terminal or command prompt:
 
 ```sh
-
 python bot.py
 ```
 
@@ -36,6 +34,30 @@ The bot will now be online and listening for messages in the Discord server it's
 - `hello`: Responds with "Hello there!".
 
 The bot also logs messages it receives, printing the author's username, message content, and channel it was sent in.
+
+## Docker
+
+#### Prerequisites
+
+- Docker
+
+To run the bot in a container you simply clone the repository and build the image with the following commands
+
+```
+docker build -t discordpybot:0.0.1 .
+```
+
+```
+docker run 'imageID'
+```
+
+Then you can check if the container is up and running by typing:
+
+```
+docker ps
+```
+
+---
 
 ## Contributing
 
