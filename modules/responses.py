@@ -2,6 +2,14 @@ import random
 import pyjokes
 import yr_weather
 
+# Create a Textforecast client
+my_client = yr_weather.Textforecast()
+
+# Fetch the list of available areas
+areas = my_client.get_areas("land")
+
+# Create a dictionary to map area names to IDs
+area_dict = {area["areaDesc"].lower(): area["id"] for area in areas["area"]}
 
 def get_response(message: str) -> str:
     p_message = message.lower()
@@ -18,15 +26,23 @@ def get_response(message: str) -> str:
     if p_message == 'joke':
         return pyjokes.get_joke()
     
-    if p_message.startswith('!weather'):
-        location = p_message.replace('!weather', '').strip()
-        weather_data = yr_weather.get_weather(location)
-        if weather_data:
-            # Extract relevant weather information from the weather_data object
-            temperature = weather_data.temperature()
-            wind_speed = weather_data.wind_speed()
-            return f"Weather in {location}: Temperature {temperature}°C, Wind Speed {wind_speed} m/s"
-        else:
-            return f"Unable to fetch weather information for {location}"
+    if p_message.startswith('weather'):
+        # Split the message into command and location
+        _, location = p_message.split(maxsplit=1)
+        
+        # Check if the location is in the list of available areas
+        if location in area_dict:
+            # Fetch the forecast for the location
+            land_overview = my_client.get_forecasts("landoverview")
+            newest_forecast = land_overview["time"][0]["forecasttype"]
+
+            # Search for the forecast for the specified location
+            for loc in newest_forecast["location"]:
+                if loc["id"] == area_dict[location]:
+                    forecast_text = loc['text']
+                    return f"Weather in {location}: {forecast_text}"
+        
+        return f"Sorry, I don't have a forecast for {location}"
+        
     else:
         return None

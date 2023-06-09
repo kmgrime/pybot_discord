@@ -38,7 +38,7 @@ async def send_message(message, user_message):
 
 # remember to change token before pushing code to repo
 def run_discord_bot():
-    TOKEN = 'YOURE_TOKEN_HERE'
+    TOKEN = 'MTA5Nzc4ODM1MTk4NzMyNzAwNw.GQdfs5.J_6SsaRrByExvd5j-hG2fsuOfMgsnNhvxJj7yU'
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
