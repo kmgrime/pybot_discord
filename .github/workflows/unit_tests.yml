@@ -22,4 +22,4 @@ jobs:
         id: checkov
         uses: bridgecrewio/checkov-action@master
         with:
-          framework: python
+          framework: github_actions
