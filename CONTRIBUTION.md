@@ -13,7 +13,7 @@ Before getting started, please read and adhere to the code of conduct. We want t
 - Make your changes and commit them to your branch
 - Push your changes to your fork
 - Create a pull request
-- Gave us a star 
+- Give us a star 
 
 ## How to Contribute
 We welcome contributions in the following forms:
