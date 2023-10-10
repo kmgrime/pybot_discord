@@ -7,56 +7,58 @@ This is a Python script for a basic Discord bot that responds to specific comman
 
 ## Installation
 
-1. Clone this repository to your local machine.
-2. Install the necessary Python packages by running the following command:
+1. **Clone this repository to your local machine**
+Open your terminal or command prompt and run the following command:
 
+```sh
+git clone https://github.com/kmgrime/pybot_discord.git
+```
+2. **Install the necessary Python packages**
+Navigate to the project directory and run:
 ```sh
 pip install -r requirements.txt
 ```
+3. **Create a New Discord Bot and Obtain its Token**
+Follow the steps [here](https://discordpy.readthedocs.io/en/stable/discord.html) to create a bot and obtain its token.
+4. **Replace the TOKEN Variable**
+Open bot.py in a text editor, find the `TOKEN` variable, and replace it with your bot's token.
 
-1. Create a new Discord bot and obtain its token. You can follow the steps [here](https://discordpy.readthedocs.io/en/stable/discord.html) to create a bot and obtain its token.
-2. Replace the `TOKEN` variable in the code with your bot's token.
 
 ## Usage
-
-To start the bot, run the following command in your terminal or command prompt:
-
+1. **Starting the Bot**
+Run the following command in your terminal or command prompt:
+The bot will now be online and actively listening for messages in the Discord server to which it has been added.
 ```sh
 python bot.py
 ```
 
-The bot will now be online and listening for messages in the Discord server it's been added to. The bot responds to the following commands:
-
+2. **Available Commands**
 - `!roll`: Generates a random number between 1 and 100.
 - `!help`: Displays the available commands.
 - `!joke`: Returns a random joke using the PyJokes package.
 - `hello`: Responds with "Hello there!".
-
-The bot also logs messages it receives, printing the author's username, message content, and channel it was sent in.
+3. **Message Logging**
+The bot logs messages it receives, displaying the author's username, message content, and the channel it was sent in.
 
 ## Docker
 
 #### Prerequisites
-
-- Docker
-
-To run the bot in a container you simply clone the repository and build the image with the following commands
-
-Build the image
+**Docker**
+**Building and Running the Image**
+1. **Build the image:**
 ```
 docker build -t discordpybot:0.0.1 .
 ```
-List the images to fetch image ID
+
+2. **List the images to fetch image ID**
 ```
 docker image list
 ```
-Build and run the image in a container
+3. **Build and run the image in a container**
 ```
 docker run 'imageID'
 ```
-
-Then you can check if the container is up and running by typing:
-
+4. **Verify if the container is up and running:**
 ```
 docker ps
 ```
@@ -64,8 +66,7 @@ docker ps
 ---
 
 ## Contributing
-
-If you have any suggestions for improvements or new features to add to the bot, feel free to open an issue or submit a pull request.
+If you have any suggestions for improvements or new features, feel free to open an issue or submit a pull request.
 
 ## Credits
 
