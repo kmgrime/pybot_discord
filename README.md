@@ -58,7 +58,7 @@ docker image list
 ```
 docker run 'imageID'
 ```
-4. **Verify if the container is up and running:**
+4. **Verify if the container is up and running**
 ```
 docker ps
 ```
