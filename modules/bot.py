@@ -4,28 +4,29 @@ import logging
 from modules import responses
 
 # logging
-print('Starting log service...')
+print("Starting log service...")
 
-# Logging attributes: https://docs.python.org/3/library/logging.html#logrecord-attributes
+# logging settings
+logging.basicConfig(
+    filename="logs.log",
+    encoding="utf-8",
+    filemode="w",
+    level=logging.DEBUG,
+    format="%(levelname)s (%(asctime)s): %(message)s (Line: %(lineno)d [%(filename)s])",
+    datefmt="%d/%m/%Y %I:%M:%S %p",
+)
 
-logging.basicConfig(filename='logs.log',
-                    encoding='utf-8',
-                    filemode='w',
-                    level=logging.DEBUG,
-                    format='%(levelname)s (%(asctime)s): %(message)s (Line: %(lineno)d [%(filename)s])',
-                    datefmt='%d/%m/%Y %I:%M:%S %p')
+# logging attributes: https://docs.python.org/3/library/logging.html#logrecord-attributes
+logging.debug("debug")
+logging.info("info")
+logging.warning("Warning")
+logging.error("Error")
+logging.critical("Critical")
 
-logging.debug('debug')
-logging.info('info')
-logging.warning('Warning')
-logging.error('Error')
-logging.critical('Critical')
-
-print('Logging started')
-
-# response
+print("Logging started")
 
 
+# response from bot
 async def send_message(message, user_message):
     try:
         response = responses.get_response(user_message)
@@ -36,16 +37,17 @@ async def send_message(message, user_message):
         print(e)
 
 
-# remember to change token before pushing code to repo
+# discord_bot
+## remember to change TOKEN before pushing code to repo
 def run_discord_bot():
-    TOKEN = 'INSERT_TOKEN_HERE'
+    TOKEN = "INSERT_TOKEN_HERE"
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
 
     @client.event
     async def on_ready():
-        print(f'{client.user} is now running!')
+        print(f"{client.user} is now running!")
 
     @client.event
     async def on_message(message):
@@ -58,13 +60,13 @@ def run_discord_bot():
 
         print(f'{username} said: "{user_message}" ({channel})')
 
-        if user_message[0] == '!':
+        if user_message[0] == "!":
             print(user_message[0])
             user_message = user_message[1:]
             await send_message(message, user_message)
-        elif user_message.lower() == 'hello':
+        elif user_message.lower() == "hello":
             await send_message(message, user_message)
         else:
-            print('No output response')
+            print("No output response")
 
     client.run(TOKEN)
