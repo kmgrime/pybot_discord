@@ -1,0 +1,25 @@
+name: "Unit Tests"
+
+on:
+  pull_request:
+    branches: 
+    - main
+  workflow_dispatch:
+  
+
+jobs:
+  unit-tests:
+    name: "Unit Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Perform a security scan of the python code using checkov
+      - name: Run Checkov action
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          framework: python
