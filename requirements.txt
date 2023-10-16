@@ -9,4 +9,4 @@ idna==3.4
 multidict==6.0.4
 pyjokes==0.6.0
 yarl==1.9.2
-yr-weather==0.3.0
+yr-weather==0.4.0
