@@ -1,4 +1,4 @@
 discord.py==2.3.2
-frozenlist==1.4.0
+frozenlist==1.4.1
 pyjokes==0.6.0
 yr-weather==0.4.0
